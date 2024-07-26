@@ -1,0 +1,24 @@
+## Movie review app | 영화 리뷰 앱 리뉴얼
+
+- [] Router 설정
+- [] 각 컴포넌트, 폴더 구성
+- [] Api 설정
+- [] GlobalStyled, reset, 웹 폰트 설정
+- [] Loading 컴포넌트 구성
+- [] 각 페이지 UI 구성 & 반응형
+- [] Helmet 설정
+- [] Scroll Event
+- [] Deploy 배포
+
+## 필요한 npm 설치 항목
+
+- [] react-router-dom
+- [] node-fetch
+- [] styled-components
+- [] styled-reset
+- [] react-spinners
+- [] helmet-async
+- [] swiper
+- [] react-hook-form
+- [] react-icons
+- [] gh-pages
