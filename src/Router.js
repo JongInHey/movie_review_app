@@ -6,10 +6,13 @@ import { PageNotFound } from "./pages/PageNotFound";
 import { Login } from "./pages/login/Login";
 import { SignUp } from "./pages/login/SignUp";
 import { routes } from "./routes";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 export const Router = () => {
   return (
     <HashRouter>
+      <Header />
       <Routes>
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.detail} element={<Detail />} />
@@ -18,6 +21,7 @@ export const Router = () => {
         <Route path={routes.signup} element={<SignUp />} />
         <Route path={"/*"} element={<PageNotFound />} />
       </Routes>
+      <Footer />
     </HashRouter>
   );
 };

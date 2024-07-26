@@ -1,6 +1,14 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
+export const colors = {
+  point: "#ff5858",
+};
+
+export const spacing = {
+  side: "100px",
+};
+
 export const GlobalStyled = createGlobalStyle`
     ${reset}
 
