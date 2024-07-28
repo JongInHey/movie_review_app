@@ -4,7 +4,7 @@
 - [x] 각 컴포넌트, 폴더 구성
 - [x] GlobalStyled, reset, 웹 폰트 설정
 - [x] Helmet 설정
-- [] Api 설정
+- [x] Api 설정
 - [] Loading 컴포넌트 구성
 - [] 각 페이지 UI 구성 & 반응형
 - [] Scroll Event
@@ -16,7 +16,7 @@
 - [x] styled-components
 - [x] styled-reset
 - [x] react-helmet-async
-- [] node-fetch
+- [x] node-fetch
 - [] react-spinners
 - [] swiper
 - [] react-hook-form
