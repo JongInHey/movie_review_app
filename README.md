@@ -17,8 +17,8 @@
 - [x] styled-reset
 - [x] react-helmet-async
 - [x] node-fetch
-- [] react-spinners
-- [] swiper
+- [x] react-spinners
+- [x] swiper
 - [] react-hook-form
 - [] react-icons
 - [] gh-pages
