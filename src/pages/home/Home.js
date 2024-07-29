@@ -8,11 +8,11 @@ import { Category } from "./components/Category";
 import { MainBanner } from "./components/MainBanner";
 
 export const Home = () => {
-  const [genreListData, setGenreListData] = useState([]);
-  const [nowData, setNowData] = useState([]);
-  const [popData, setPopData] = useState([]);
-  const [topData, setTopData] = useState([]);
-  const [upData, setUpData] = useState([]);
+  const [genreListData, setGenreListData] = useState();
+  const [nowData, setNowData] = useState();
+  const [popData, setPopData] = useState();
+  const [topData, setTopData] = useState();
+  const [upData, setUpData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const [randomIndex, setRandomIndex] = useState(0);
   const [selectedGenre, setSelectedGenre] = useState(null);
