@@ -14,7 +14,8 @@ export const ViewDetail = ({ detailData }) => {
     <Container>
       <CoverImg
         src={
-          detailData.poster_path === null
+          detailData.poster_path === null ||
+          detailData.poster_path === undefined
             ? NOIMG_URL
             : W500_URL + detailData.poster_path
         }
@@ -28,11 +29,14 @@ export const ViewDetail = ({ detailData }) => {
           <span>{detailData.runtime}분</span>
         </Info>
 
-        <Genres>
-          {detailData.genres.map((genre) => (
-            <li key={genre.id}>{genre.name}</li>
-          ))}
-        </Genres>
+        {detailData.genres && (
+          <Genres>
+            {detailData.genres.map((genre) => (
+              <li key={genre.id}>{genre.name}</li>
+            ))}
+          </Genres>
+        )}
+
         <Desc>
           <p>{detailData.overview}</p>
         </Desc>

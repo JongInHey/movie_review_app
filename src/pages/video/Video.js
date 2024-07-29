@@ -74,7 +74,7 @@ export const Video = () => {
     })();
   }, [movieId]);
 
-  console.log(videoData);
+  // console.log(videoData);
 
   return (
     <>

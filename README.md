@@ -20,5 +20,5 @@
 - [x] react-spinners
 - [x] swiper
 - [x] react-icons
-- [] react-hook-form
+- [x] react-hook-form
 - [] gh-pages

@@ -65,21 +65,25 @@ export const Similar = ({ title, simData }) => {
     <Section>
       <Title>{title}</Title>
       <Swiper {...params}>
-        {simData.map((sData) => (
-          <SwiperSlide key={sData.id}>
-            <Link to={`/detail/${sData.id}`}>
-              <img
-                src={
-                  sData.poster_path === null
-                    ? NOIMG_URL
-                    : `${W500_URL}${sData.poster_path}`
-                }
-                alt={sData.title}
-              />
-              <MovieTitle>{sData.title}</MovieTitle>
-            </Link>
-          </SwiperSlide>
-        ))}
+        {simData && (
+          <>
+            {simData.map((sData) => (
+              <SwiperSlide key={sData.id}>
+                <Link to={`/detail/${sData.id}`}>
+                  <img
+                    src={
+                      sData.poster_path === null
+                        ? NOIMG_URL
+                        : `${W500_URL}${sData.poster_path}`
+                    }
+                    alt={sData.title}
+                  />
+                  <MovieTitle>{sData.title}</MovieTitle>
+                </Link>
+              </SwiperSlide>
+            ))}
+          </>
+        )}
       </Swiper>
     </Section>
   );
