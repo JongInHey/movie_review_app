@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { spacing } from "../../../GlobalStyled";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { W500_URL } from "../../../constant/imgUrl";
+import { NOIMG_URL, W500_URL } from "../../../constant/imgUrl";
 import { Link } from "react-router-dom";
 
 const Section = styled.section`
@@ -66,9 +66,16 @@ export const Similar = ({ title, simData }) => {
       <Title>{title}</Title>
       <Swiper {...params}>
         {simData.map((sData) => (
-          <SwiperSlide>
+          <SwiperSlide key={sData.id}>
             <Link to={`/detail/${sData.id}`}>
-              <img src={`${W500_URL}${sData.poster_path}`} alt={sData.title} />
+              <img
+                src={
+                  sData.poster_path === null
+                    ? NOIMG_URL
+                    : `${W500_URL}${sData.poster_path}`
+                }
+                alt={sData.title}
+              />
               <MovieTitle>{sData.title}</MovieTitle>
             </Link>
           </SwiperSlide>

@@ -32,8 +32,8 @@ const SSideMenu = styled.div`
     background-color: #252525;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
     z-index: 98;
-    display: ${(props) => (props.show ? "block" : "none")};
-    animation: ${(props) => (props.show ? slideIn : slideOut)} 0.3s forwards;
+    display: ${(props) => (props.$show ? "block" : "none")};
+    animation: ${(props) => (props.$show ? slideIn : slideOut)} 0.3s forwards;
     ul {
       padding: 70px 30px;
       font-size: 20px;
@@ -50,7 +50,7 @@ const SSideMenu = styled.div`
 
 export const SideMenu = ({ show, moreHandler }) => {
   return (
-    <SSideMenu show={show}>
+    <SSideMenu $show={show}>
       <ul>
         <li>
           <Link to={routes.home} onClick={moreHandler}>

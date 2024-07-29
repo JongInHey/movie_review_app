@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { PageTitle } from "../../components/PageTitle";
 import { searchMovie, searchPerson } from "../../api";
+import { Loading } from "../../components/Loading";
 
 export const Search = () => {
   const [searchData, setSearchData] = useState();
@@ -24,12 +25,16 @@ export const Search = () => {
   // console.log(searchData);
   console.log(personData);
 
-  if (isLoading) return <div>Loading...</div>;
-
   return (
     <>
-      <PageTitle titleName={"Search"} />
-      Search
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <PageTitle titleName={"Search"} />
+          Search
+        </>
+      )}
     </>
   );
 };

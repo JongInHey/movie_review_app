@@ -1,6 +1,7 @@
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/home/Home";
 import { Detail } from "./pages/detail/Detail";
+import { Video } from "./pages/video/Video";
 import { Search } from "./pages/search/Search";
 import { PageNotFound } from "./pages/PageNotFound";
 import { Login } from "./pages/login/Login";
@@ -16,6 +17,7 @@ export const Router = () => {
       <Routes>
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.detail} element={<Detail />} />
+        <Route path={routes.video} element={<Video />} />
         <Route path={routes.search} element={<Search />} />
         <Route path={routes.login} element={<Login />} />
         <Route path={routes.signup} element={<SignUp />} />
