@@ -12,8 +12,9 @@ const Form = styled.form`
     border-bottom: 1px solid #555;
     &::placeholder {
       font-size: 20px;
+      margin-left: 20px;
     }
-    padding: 0 10px;
+    padding: 0 30px;
     font-size: 20px;
     letter-spacing: 0;
   }
@@ -21,8 +22,8 @@ const Form = styled.form`
   button {
     all: unset;
     position: absolute;
-    top: 20px;
-    right: 0;
+    top: 15px;
+    left: 0;
     font-size: 20px;
     cursor: pointer;
   }
@@ -30,11 +31,11 @@ const Form = styled.form`
   @media screen and (max-width: 768px) {
     input {
       height: 40px;
+      padding: 0 20px;
       &::placeholder {
         font-size: 16px;
       }
       font-size: 16px;
-      padding: 0;
     }
 
     button {
