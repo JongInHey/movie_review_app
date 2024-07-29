@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import { PageTitle } from "../../components/PageTitle";
 import { movieList, nowPlaying, popular, topRated, upcoming } from "../../api";
+import { Loading } from "../../components/Loading";
+
+import "swiper/css";
+
+import { Movies } from "./components/Movies";
+import { Category } from "./components/Category";
+import { MainBanner } from "./components/MainBanner";
 
 export const Home = () => {
   const [genreListData, setgenreListData] = useState();
@@ -36,12 +43,23 @@ export const Home = () => {
   // console.log(topData);
   // console.log(upData);
 
-  if (isLoading) return <div>Loading...</div>;
-
   return (
     <>
-      <PageTitle titleName={"Home"} />
-      Home
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <PageTitle titleName={"Home"} />
+          <MainBanner bannerData={nowData[0]} />
+
+          <Category genreListData={genreListData} />
+
+          <Movies title={"현재 상영 영화"} movieData={nowData} />
+          <Movies title={"현재 인기 영화"} movieData={popData} />
+          <Movies title={"최고 평점 영화"} movieData={topData} />
+          <Movies title={"개봉 예정 영화"} movieData={upData} />
+        </>
+      )}
     </>
   );
 };
