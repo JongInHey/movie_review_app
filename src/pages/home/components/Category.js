@@ -1,21 +1,19 @@
 import styled from "styled-components";
 import { spacing } from "../../../GlobalStyled";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 const SCategory = styled.div`
   width: 100%;
-  padding: 20px 0 0 ${spacing.side};
-
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  padding: 50px 0 0 ${spacing.side};
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
 
   button {
     all: unset;
-    width: 100%;
-    padding: 5px 12px;
+    padding: 5px 15px;
+    margin-right: 10px;
+    margin-bottom: 5px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -23,18 +21,27 @@ const SCategory = styled.div`
     cursor: pointer;
     color: rgba(255, 255, 255, 0.8);
   }
+
+  @media screen and (max-width: 768px) {
+    padding: 50px 0 0 ${spacing.moSide};
+    button {
+      font-size: 12px;
+      padding: 3px 10px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  }
 `;
 
-export const Category = ({ genreListData }) => {
+export const Category = ({ genreListData, onSelectGenre }) => {
   return (
     <SCategory>
-      <Swiper spaceBetween={20} slidesPerView={12}>
-        {genreListData.map((genre) => (
-          <SwiperSlide key={genre.id}>
-            <button>#{genre.name}</button>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <button onClick={() => onSelectGenre(null)}>All</button>
+      {genreListData.map((genre) => (
+        <div key={genre.id}>
+          <button onClick={() => onSelectGenre(genre.id)}>#{genre.name}</button>
+        </div>
+      ))}
     </SCategory>
   );
 };

@@ -19,6 +19,6 @@
 - [x] node-fetch
 - [x] react-spinners
 - [x] swiper
+- [x] react-icons
 - [] react-hook-form
-- [] react-icons
 - [] gh-pages
