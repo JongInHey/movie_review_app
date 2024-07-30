@@ -11,7 +11,7 @@ const SCategory = styled.div`
 
   button {
     all: unset;
-    padding: 5px 15px;
+    padding: 5px 15px 6px 15px;
     margin-right: 10px;
     margin-bottom: 5px;
     text-align: center;
@@ -25,10 +25,11 @@ const SCategory = styled.div`
   @media screen and (max-width: 768px) {
     padding: 50px 0 0 ${spacing.moSide};
     button {
-      font-size: 12px;
-      padding: 3px 10px;
+      font-size: 14px;
+      padding: 5px 10px 6px 10px;
       margin-right: 10px;
       margin-bottom: 15px;
+      border: 0;
     }
   }
 `;
