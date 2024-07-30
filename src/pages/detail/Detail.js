@@ -7,6 +7,7 @@ import { Loading } from "../../components/Loading";
 import { Similar } from "./components/Similar";
 import styled from "styled-components";
 import { colors } from "../../GlobalStyled";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const Trailer = styled.button`
   all: unset;
@@ -40,6 +41,7 @@ const Trailer = styled.button`
 `;
 
 export const Detail = () => {
+  useScrollTop();
   const [isLoading, setIsLoading] = useState(true);
   const [detailData, setDetailData] = useState();
   const [recommendData, setRecommendData] = useState();

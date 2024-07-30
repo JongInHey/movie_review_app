@@ -6,8 +6,10 @@ import "swiper/css";
 import { Movies } from "./components/Movies";
 import { Category } from "./components/Category";
 import { MainBanner } from "./components/MainBanner";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 export const Home = () => {
+  useScrollTop();
   const [genreListData, setGenreListData] = useState();
   const [nowData, setNowData] = useState();
   const [popData, setPopData] = useState();

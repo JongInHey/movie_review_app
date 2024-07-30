@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { spacing } from "../../../GlobalStyled";
-import { ORIGIN_URL } from "../../../constant/imgUrl";
+import { W500_URL } from "../../../constant/imgUrl";
 
 export const Container = styled.section`
   padding: 100px 20%;
@@ -58,6 +58,7 @@ export const ConWrap = styled.div`
     font-size: 70px;
     font-weight: 700;
     margin-bottom: 30px;
+    line-height: 75px;
   }
 
   @media screen and (max-width: 1548px) {
@@ -70,6 +71,7 @@ export const ConWrap = styled.div`
     width: 100%;
     h3 {
       font-size: 50px;
+      line-height: 60px;
     }
   }
 
@@ -78,6 +80,8 @@ export const ConWrap = styled.div`
     width: 100%;
     h3 {
       font-size: 37px;
+      line-height: 47px;
+      margin-top: 65px;
     }
   }
 `;
@@ -141,7 +145,7 @@ export const Genres = styled.ul`
     justify-content: center;
     padding: 10px 0;
     position: absolute;
-    top: 32%;
+    top: 30%;
     left: 70%;
     z-index: 98;
     list-style: none;
@@ -186,7 +190,7 @@ export const BgImg = styled.div`
   z-index: 90;
   width: 100%;
   height: 83vh;
-  background: url(${ORIGIN_URL}${(props) => props.$bgimg}) no-repeat center /
+  background: url(${W500_URL}${(props) => props.$bgimg}) no-repeat center /
     cover;
   opacity: 0.5;
   filter: blur(30px);

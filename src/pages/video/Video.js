@@ -5,6 +5,7 @@ import { Videos } from "../../api";
 import { Loading } from "../../components/Loading";
 import styled from "styled-components";
 import { colors, spacing } from "../../GlobalStyled";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const Container = styled.section`
   padding: 100px ${spacing.side};
@@ -82,6 +83,7 @@ const BackBtn = styled.button`
 `;
 
 export const Video = () => {
+  useScrollTop();
   const [isLoading, setIsLoading] = useState(true);
   const [videoData, setVideoData] = useState();
   const [videoUrl, setVideoUrl] = useState();
