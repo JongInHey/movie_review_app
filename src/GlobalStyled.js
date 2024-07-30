@@ -3,6 +3,7 @@ import reset from "styled-reset";
 
 export const colors = {
   point: "#ff5858",
+  gradient: "#ff9898",
 };
 
 export const spacing = {

@@ -18,7 +18,7 @@ const Trailer = styled.button`
   font-weight: 500;
   border-radius: 30px;
   cursor: pointer;
-  background: linear-gradient(135deg, ${colors.point}, #ff9898);
+  background: linear-gradient(135deg, ${colors.point}, ${colors.gradient});
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   position: relative;

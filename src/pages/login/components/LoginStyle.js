@@ -89,7 +89,7 @@ export const Button = styled.button`
   all: unset;
   width: 100%;
   height: 40px;
-  background: linear-gradient(135deg, ${colors.point}, #ff9898);
+  background: linear-gradient(135deg, ${colors.point}, ${colors.gradient});
   text-align: center;
   border-radius: 30px;
   margin-top: 20px;

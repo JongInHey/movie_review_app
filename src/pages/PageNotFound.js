@@ -3,6 +3,7 @@ import { PageTitle } from "../components/PageTitle";
 import { colors } from "../GlobalStyled";
 import { Link } from "react-router-dom";
 import { MdError } from "react-icons/md";
+import { useScrollTop } from "../lib/useScrollTop";
 
 const Container = styled.div`
   width: 100%;
@@ -12,6 +13,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   svg {
     font-size: 72px;
     position: relative;
@@ -32,22 +34,29 @@ const Container = styled.div`
   a {
     padding: 12px 24px;
     font-size: 18px;
-    background-color: ${colors.point};
-    text-decoration: none;
-    border-radius: 8px;
+    background: linear-gradient(135deg, ${colors.point}, ${colors.gradient});
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border-radius: 10px;
     transition: 0.3s ease;
 
     &:hover {
-      background-color: lightgreen;
-      color: #222;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
   }
 `;
 
 export const PageNotFound = () => {
+  useScrollTop();
   return (
     <>
-      <PageTitle titleName={"404Page"} />
+      <PageTitle titleName={"없습니다!"} />
       <Container>
         <MdError />
         <h1>404</h1>
