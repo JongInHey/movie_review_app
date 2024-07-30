@@ -25,8 +25,7 @@ export const Login = () => {
 
   const loginHandler = (data) => {
     const { username, password } = data;
-    const userData = localStorage.getItem("userData");
-    const localData = JSON.parse(userData);
+    const localData = JSON.parse(localStorage.getItem("userData"));
 
     if (
       localData &&
