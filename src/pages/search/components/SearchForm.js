@@ -10,6 +10,7 @@ const Form = styled.form`
     width: 100%;
     height: 50px;
     border-bottom: 1px solid #555;
+    box-sizing: border-box;
     &::placeholder {
       font-size: 20px;
       margin-left: 20px;

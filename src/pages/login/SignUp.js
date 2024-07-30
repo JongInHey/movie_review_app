@@ -2,7 +2,13 @@ import { PageTitle } from "../../components/PageTitle";
 import { UserErrorMessage } from "./components/UserErrorMessage";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { Container, Form, Button, TextWrap } from "./components/LoginStyle";
+import {
+  Container,
+  BackBg,
+  Form,
+  Button,
+  TextWrap,
+} from "./components/LoginStyle";
 import { FaLock, FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiUserSmileFill } from "react-icons/ri";
@@ -27,6 +33,7 @@ export const SignUp = () => {
     <>
       <PageTitle titleName={"SignUp"} />
       <Container>
+        <BackBg />
         <Form onSubmit={handleSubmit(loginHandler)}>
           <h3>SIGN UP</h3>
           <input

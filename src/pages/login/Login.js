@@ -2,7 +2,13 @@ import { PageTitle } from "../../components/PageTitle";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { UserErrorMessage } from "./components/UserErrorMessage";
-import { Container, Form, Button, TextWrap } from "./components/LoginStyle";
+import {
+  Container,
+  BackBg,
+  Form,
+  Button,
+  TextWrap,
+} from "./components/LoginStyle";
 import { useState } from "react";
 import { FaLock, FaUser } from "react-icons/fa";
 
@@ -22,14 +28,12 @@ export const Login = () => {
     const userData = localStorage.getItem("userData");
     const localData = JSON.parse(userData);
 
-    console.log(username);
-    console.log(localData.username);
-
     if (
       localData &&
       localData.username === username &&
       localData.password === password
     ) {
+      setLoginError("");
       alert(`${localData.name} 님 환영 합니다! \n 로그인 되었습니다!!`);
       navi("/");
     } else {
@@ -41,6 +45,7 @@ export const Login = () => {
     <>
       <PageTitle titleName={"Login"} />
       <Container>
+        <BackBg />
         <Form onSubmit={handleSubmit(loginHandler)}>
           <h3>LOGIN</h3>
           <input
