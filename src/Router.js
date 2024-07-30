@@ -9,6 +9,7 @@ import { SignUp } from "./pages/login/SignUp";
 import { routes } from "./routes";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { TopBtn } from "./components/TopBtn";
 
 export const Router = () => {
   return (
@@ -23,6 +24,7 @@ export const Router = () => {
         <Route path={routes.signup} element={<SignUp />} />
         <Route path={"/*"} element={<PageNotFound />} />
       </Routes>
+      <TopBtn />
       <Footer />
     </HashRouter>
   );
