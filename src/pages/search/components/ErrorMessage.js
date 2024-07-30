@@ -7,7 +7,7 @@ const SErrorMessage = styled.h4`
 
   @media screen and (max-width: 768px) {
     font-size: 14px;
-    margin-top: 8px;
+    margin-top: 13px;
   }
 `;
 

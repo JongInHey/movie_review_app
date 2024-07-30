@@ -6,6 +6,7 @@ import { ViewDetail } from "./components/ViewDetail";
 import { Loading } from "../../components/Loading";
 import { Similar } from "./components/Similar";
 import styled from "styled-components";
+import { colors } from "../../GlobalStyled";
 
 const Trailer = styled.button`
   all: unset;
@@ -16,7 +17,7 @@ const Trailer = styled.button`
   font-weight: 500;
   border-radius: 30px;
   cursor: pointer;
-  background: linear-gradient(135deg, #222, #444);
+  background: linear-gradient(135deg, ${colors.point}, #ff9898);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   position: relative;

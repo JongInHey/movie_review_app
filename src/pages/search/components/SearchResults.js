@@ -8,7 +8,6 @@ const ConWrap = styled.div`
   grid-template-columns: repeat(5, 1fr);
   row-gap: 30px;
   column-gap: 15px;
-  margin-top: 10px;
 
   @media screen and (max-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);

@@ -27,8 +27,8 @@ const SCategory = styled.div`
     button {
       font-size: 12px;
       padding: 3px 10px;
-      margin-right: 5px;
-      margin-bottom: 5px;
+      margin-right: 10px;
+      margin-bottom: 15px;
     }
   }
 `;

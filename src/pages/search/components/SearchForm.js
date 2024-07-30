@@ -51,7 +51,7 @@ export const SearchForm = ({ onSearchResult, register, errors }) => {
     <Form onSubmit={onSearchResult}>
       <input
         {...register("keyword", {
-          required: "검색 내용을 입력해주세요..!(●'◡'●)",
+          required: "찾고싶은 영화나 사람을 입력해주세요..!(●'◡'●)",
         })}
         type="text"
         placeholder="검색할 내용을 입력하세요.."

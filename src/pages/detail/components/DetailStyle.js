@@ -189,7 +189,7 @@ export const BgImg = styled.div`
   background: url(${ORIGIN_URL}${(props) => props.$bgimg}) no-repeat center /
     cover;
   opacity: 0.5;
-  filter: blur(5px);
+  filter: blur(30px);
 
   @media screen and (max-width: 768px) {
     height: 380px;
