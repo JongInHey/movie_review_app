@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { PageTitle } from "../../components/PageTitle";
-import { movieDetail, recommendations, similar } from "../../api";
+import { movieDetail, recommendations, similar, Videos } from "../../api";
 import { useNavigate, useParams } from "react-router-dom";
 import { ViewDetail } from "./components/ViewDetail";
 import { Loading } from "../../components/Loading";
@@ -46,6 +46,7 @@ export const Detail = () => {
   const [detailData, setDetailData] = useState();
   const [recommendData, setRecommendData] = useState();
   const [similarData, setSimilarData] = useState();
+  const [videoData, setVideoData] = useState();
   const { id: movieId } = useParams();
   const navi = useNavigate();
 
@@ -55,11 +56,12 @@ export const Detail = () => {
         const data = await movieDetail(movieId);
         const { results: recoResults } = await recommendations(movieId);
         const { results: simResults } = await similar(movieId);
+        const { results: videoResults } = await Videos(movieId);
 
         setDetailData(data);
         setRecommendData(recoResults);
         setSimilarData(simResults);
-
+        setVideoData(videoResults);
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -70,6 +72,7 @@ export const Detail = () => {
   // console.log(detailData);
   // console.log(recommendData);
   // console.log(similarData);
+  // console.log(videoData);
 
   const handleWatchTrailer = () => {
     navi(`/video/${movieId}`);
@@ -82,7 +85,11 @@ export const Detail = () => {
         <>
           <PageTitle titleName={"Detail"} />
           <ViewDetail detailData={detailData} />
-          <Trailer onClick={handleWatchTrailer}>예고편 보러가기</Trailer>
+          {videoData.length === 0 ? (
+            ""
+          ) : (
+            <Trailer onClick={handleWatchTrailer}>예고편 보러가기</Trailer>
+          )}
 
           <Similar title={"추천 영화"} simData={recommendData} />
           <Similar title={"장르 & 키워드 유사한 영화"} simData={similarData} />

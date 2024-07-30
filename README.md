@@ -6,8 +6,8 @@
 - [x] Helmet 설정
 - [x] Api 설정
 - [x] Loading 컴포넌트 구성
+- [x] Scroll Event
 - [] 각 페이지 UI 구성 & 반응형
-- [] Scroll Event
 - [] Deploy 배포
 
 ## 필요한 npm 설치 항목
