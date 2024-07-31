@@ -5,4 +5,6 @@ export const routes = {
   search: "/search",
   login: "/login",
   signup: "/signup",
+  findusername: "/findusername",
+  findpassword: "/findpassword",
 };

@@ -31,7 +31,7 @@ export const Login = ({ onLogin }) => {
   const loginHandler = (data) => {
     const { username, password } = data;
     const localData = JSON.parse(localStorage.getItem("userData"));
-    setLocalname(localData?.username);
+    setLocalname(localData?.name);
     if (
       localData &&
       localData.username === username &&
@@ -104,10 +104,18 @@ export const Login = ({ onLogin }) => {
             아직 회원이 아니신가요?
             <Link to={"/signup"}>회원가입 하러 가기</Link>
           </p>
+          <p>
+            비밀번호를 잊으셨나요?
+            <Link to={"/findpassword"}>비밀번호 찾기</Link>
+          </p>
         </TextWrap>
 
         <Alret $logging={logging}>
-          <p>{localname}님 환영 합니다! 로그인 되었습니다!!</p>
+          <p>
+            {localname}님 환영 합니다!
+            <br />
+            로그인 되었습니다!!
+          </p>
         </Alret>
       </Container>
     </>

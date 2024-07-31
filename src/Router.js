@@ -11,6 +11,8 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { TopBtn } from "./components/TopBtn";
 import { useEffect, useState } from "react";
+import { FindUsername } from "./pages/login/FindUsername";
+import { FindPassword } from "./pages/login/FindPassword";
 
 export const Router = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -42,6 +44,8 @@ export const Router = () => {
         <Route path={routes.video} element={<Video />} />
         <Route path={routes.search} element={<Search />} />
         <Route path={routes.login} element={<Login onLogin={handleLogin} />} />
+        <Route path={routes.findusername} element={<FindUsername />} />
+        <Route path={routes.findpassword} element={<FindPassword />} />
         <Route path={routes.signup} element={<SignUp />} />
         <Route path={"/*"} element={<PageNotFound />} />
       </Routes>

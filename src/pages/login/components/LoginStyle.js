@@ -118,6 +118,10 @@ export const TextWrap = styled.div`
     margin-left: 10px;
   }
 
+  & p:first-child {
+    margin-bottom: 10px;
+  }
+
   @media screen and (max-width: 768px) {
     margin-top: 30px;
   }
@@ -128,13 +132,13 @@ export const Alret = styled.div`
   background: linear-gradient(135deg, ${colors.point}, ${colors.gradient});
   position: relative;
   z-index: 98;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
   margin: 50px auto;
   border-radius: 20px;
-  display: flex;
   opacity: ${(props) => (props.$logging ? 1 : 0)};
   transform: ${(props) =>
     props.$logging ? "translateY(0)" : "translateY(20px)"};
