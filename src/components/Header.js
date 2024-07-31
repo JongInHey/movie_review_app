@@ -69,7 +69,7 @@ export const Header = ({ isLogged, onLogout }) => {
 
   return (
     <Container>
-      <Logo>
+      <Logo onClick={moreHandler}>
         <Link to={routes.home}>JONGFILX</Link>
       </Logo>
 

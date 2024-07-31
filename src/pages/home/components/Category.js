@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { spacing } from "../../../GlobalStyled";
+import { colors, spacing } from "../../../GlobalStyled";
 
 const SCategory = styled.div`
   width: 100%;
@@ -9,38 +9,49 @@ const SCategory = styled.div`
   flex-wrap: wrap;
   align-items: center;
 
-  button {
-    all: unset;
-    padding: 5px 15px 6px 15px;
-    margin-right: 10px;
-    margin-bottom: 5px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 30px;
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.8);
-  }
-
   @media screen and (max-width: 768px) {
     padding: 50px 0 0 ${spacing.moSide};
-    button {
-      font-size: 14px;
-      padding: 5px 10px 6px 10px;
-      margin-right: 10px;
-      margin-bottom: 15px;
-      border: 0;
-    }
   }
 `;
 
-export const Category = ({ genreListData, onSelectGenre }) => {
+const Button = styled.button`
+  all: unset;
+  padding: 5px 15px 6px 15px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  background-color: ${(props) =>
+    props.$isSelected ? `${colors.point}` : "rgba(255, 255, 255, 0.2)"};
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    padding: 5px 10px 6px 10px;
+    margin-bottom: 15px;
+    border: 0;
+  }
+`;
+
+export const Category = ({ genreListData, onSelectGenre, selectedGenre }) => {
   return (
     <SCategory>
-      <button onClick={() => onSelectGenre(null)}>All</button>
+      <Button
+        onClick={() => onSelectGenre(null)}
+        $isSelected={selectedGenre === null}
+      >
+        All
+      </Button>
       {genreListData.map((genre) => (
         <div key={genre.id}>
-          <button onClick={() => onSelectGenre(genre.id)}>#{genre.name}</button>
+          <Button
+            onClick={() => onSelectGenre(genre.id)}
+            $isSelected={selectedGenre === genre.id}
+          >
+            #{genre.name}
+          </Button>
         </div>
       ))}
     </SCategory>

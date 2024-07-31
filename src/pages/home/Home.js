@@ -65,6 +65,7 @@ export const Home = () => {
           <Category
             genreListData={genreListData}
             onSelectGenre={handleSelect}
+            selectedGenre={selectedGenre}
           />
 
           <Movies
