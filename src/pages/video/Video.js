@@ -39,18 +39,6 @@ const Container = styled.section`
   }
 `;
 
-const ErrorMessage = styled.h3`
-  font-size: 50px;
-  font-weight: 600;
-  text-align: center;
-  padding: 100px ${spacing.side};
-  color: ${colors.point};
-
-  @media screen and (max-width: 768px) {
-    font-size: 30px;
-  }
-`;
-
 const BackBtn = styled.button`
   all: unset;
   display: block;
@@ -86,18 +74,12 @@ export const Video = () => {
   useScrollTop();
   const [isLoading, setIsLoading] = useState(true);
   const [videoData, setVideoData] = useState();
-  const [videoUrl, setVideoUrl] = useState();
   const { id: movieId } = useParams();
 
   useEffect(() => {
     (async () => {
       try {
         const { results: videoResults } = await Videos(movieId);
-        const trailer = videoResults.find((video) => video.type === "Trailer");
-
-        if (trailer) {
-          setVideoUrl(`https://www.youtube.com/embed/${trailer.key}`);
-        }
 
         setVideoData(videoResults);
         setIsLoading(false);
@@ -107,7 +89,7 @@ export const Video = () => {
     })();
   }, [movieId]);
 
-  // console.log(videoData);
+  console.log(videoData);
 
   return (
     <>
@@ -115,30 +97,24 @@ export const Video = () => {
         <Loading />
       ) : (
         <>
-          {videoUrl ? (
-            <>
-              <Container>
-                {videoData.map((video) => (
-                  <div key={video.id}>
-                    <iframe
-                      width="100%"
-                      height="450"
-                      src={`https://www.youtube.com/embed/${video.key}`}
-                      title={video.name}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                ))}
-              </Container>
-              <BackBtn>
-                <Link to={`/detail/${movieId}`}>상세페이지로 돌아가기</Link>
-              </BackBtn>
-            </>
-          ) : (
-            <ErrorMessage>예고편이 없습니다...😂</ErrorMessage>
-          )}
+          <Container>
+            {videoData.map((video) => (
+              <div key={video.id}>
+                <iframe
+                  width="100%"
+                  height="450"
+                  src={`https://www.youtube.com/embed/${video.key}`}
+                  title={video.name}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            ))}
+          </Container>
+          <BackBtn>
+            <Link to={`/detail/${movieId}`}>상세페이지로 돌아가기</Link>
+          </BackBtn>
         </>
       )}
     </>
