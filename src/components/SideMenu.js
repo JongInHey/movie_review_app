@@ -28,6 +28,7 @@ const SSideMenu = styled.div`
   top: 0;
   right: 0;
   display: none;
+
   @media screen and (max-width: 768px) {
     background-color: #252525;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
@@ -48,7 +49,11 @@ const SSideMenu = styled.div`
   }
 `;
 
-export const SideMenu = ({ show, moreHandler }) => {
+export const SideMenu = ({ show, moreHandler, isLogged, onLogout }) => {
+  const handleLogout = () => {
+    moreHandler();
+    onLogout();
+  };
   return (
     <SSideMenu $show={show}>
       <ul>
@@ -59,14 +64,22 @@ export const SideMenu = ({ show, moreHandler }) => {
         </li>
         <li>
           <Link to={routes.search} onClick={moreHandler}>
-            Search
+            SEARCH
           </Link>
         </li>
-        <li>
-          <Link to={routes.login} onClick={moreHandler}>
-            Login
-          </Link>
-        </li>
+        {isLogged ? (
+          <li>
+            <Link to={routes.login} onClick={handleLogout}>
+              LOGOUT
+            </Link>
+          </li>
+        ) : (
+          <li>
+            <Link to={routes.login} onClick={moreHandler}>
+              LOGIN
+            </Link>
+          </li>
+        )}
       </ul>
     </SSideMenu>
   );

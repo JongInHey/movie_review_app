@@ -40,18 +40,6 @@ const Menu = styled.ul`
       color: ${colors.point};
     }
   }
-  .logging {
-    all: unset;
-    font-size: 18px;
-    font-weight: 600;
-    margin-left: 100px;
-    cursor: pointer;
-    /* display: "none"; */
-
-    &:hover {
-      color: ${colors.point};
-    }
-  }
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -72,7 +60,7 @@ const More = styled.div`
   }
 `;
 
-export const Header = () => {
+export const Header = ({ isLogged, onLogout }) => {
   const [show, setShow] = useState(false);
 
   const moreHandler = () => {
@@ -82,7 +70,7 @@ export const Header = () => {
   return (
     <Container>
       <Logo>
-        <Link to={routes.home}>JongFlix</Link>
+        <Link to={routes.home}>JONGFILX</Link>
       </Logo>
 
       <Menu>
@@ -90,19 +78,31 @@ export const Header = () => {
           <Link to={routes.home}>HOME</Link>
         </li>
         <li>
-          <Link to={routes.search}>Search</Link>
+          <Link to={routes.search}>SEARCH</Link>
         </li>
-        <li>
-          <Link to={routes.login}>Login</Link>
-        </li>
-        <button className="logging">LogOut</button>
+        {isLogged ? (
+          <li>
+            <Link to={routes.login} onClick={onLogout}>
+              LOGOUT
+            </Link>
+          </li>
+        ) : (
+          <li>
+            <Link to={routes.login}>LOGIN</Link>
+          </li>
+        )}
       </Menu>
 
       <More onClick={moreHandler}>
         <GiHamburgerMenu />
       </More>
 
-      <SideMenu show={show} moreHandler={moreHandler} />
+      <SideMenu
+        show={show}
+        moreHandler={moreHandler}
+        isLogged={isLogged}
+        onLogout={onLogout}
+      />
     </Container>
   );
 };

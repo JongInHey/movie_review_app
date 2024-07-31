@@ -12,8 +12,10 @@ import {
 } from "./components/LoginStyle";
 import { useState } from "react";
 import { FaLock, FaUser } from "react-icons/fa";
+import { useScrollTop } from "../../lib/useScrollTop";
 
-export const Login = () => {
+export const Login = ({ onLogin }) => {
+  useScrollTop();
   const [loginError, setLoginError] = useState();
   const [localname, setLocalname] = useState();
   const [logging, setLogging] = useState(false);
@@ -29,12 +31,13 @@ export const Login = () => {
   const loginHandler = (data) => {
     const { username, password } = data;
     const localData = JSON.parse(localStorage.getItem("userData"));
-    setLocalname(localData.username);
+    setLocalname(localData?.username);
     if (
       localData &&
       localData.username === username &&
       localData.password === password
     ) {
+      onLogin();
       setLoginError("");
       setTimeout(() => {
         setLogging(true);

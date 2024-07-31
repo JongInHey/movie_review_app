@@ -9,7 +9,7 @@ export const Container = styled.div`
   position: relative;
   z-index: 98;
   @media screen and (max-width: 768px) {
-    margin: 100px auto;
+    margin: 80px auto;
   }
 `;
 
@@ -55,6 +55,7 @@ export const Form = styled.form`
     font-size: 20px;
     &::placeholder {
       font-size: 18px;
+      letter-spacing: 0;
     }
   }
 
@@ -66,6 +67,10 @@ export const Form = styled.form`
   }
 
   @media screen and (max-width: 768px) {
+    h3 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
     input {
       width: 80%;
       height: 45px;
@@ -134,4 +139,11 @@ export const Alret = styled.div`
   transform: ${(props) =>
     props.$logging ? "translateY(0)" : "translateY(20px)"};
   transition-duration: 0.3s;
+
+  @media screen and (max-width: 768px) {
+    width: 80%;
+    height: 55px;
+    font-size: 16px;
+    margin: 25px auto;
+  }
 `;

@@ -14,8 +14,10 @@ import { FaLock, FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiUserSmileFill } from "react-icons/ri";
 import { useState } from "react";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 export const SignUp = () => {
+  useScrollTop();
   const [logging, setLogging] = useState(false);
 
   const {

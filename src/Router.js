@@ -10,17 +10,38 @@ import { routes } from "./routes";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { TopBtn } from "./components/TopBtn";
+import { useEffect, useState } from "react";
 
 export const Router = () => {
+  const [isLogged, setIsLogged] = useState(false);
+
+  useEffect(() => {
+    const islogin = localStorage.getItem("isLoggedIn");
+
+    if (islogin === "true") {
+      setIsLogged(true);
+    }
+  }, []);
+
+  const handleLogin = () => {
+    localStorage.setItem("isLoggedIn", "true");
+    setIsLogged(true);
+  };
+
+  const handleLogout = () => {
+    localStorage.setItem("isLoggedIn", "false");
+    setIsLogged(false);
+  };
+
   return (
     <HashRouter>
-      <Header />
+      <Header isLogged={isLogged} onLogout={handleLogout} />
       <Routes>
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.detail} element={<Detail />} />
         <Route path={routes.video} element={<Video />} />
         <Route path={routes.search} element={<Search />} />
-        <Route path={routes.login} element={<Login />} />
+        <Route path={routes.login} element={<Login onLogin={handleLogin} />} />
         <Route path={routes.signup} element={<SignUp />} />
         <Route path={"/*"} element={<PageNotFound />} />
       </Routes>
