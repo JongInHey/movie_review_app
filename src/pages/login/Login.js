@@ -16,7 +16,7 @@ import { FaLock, FaUser } from "react-icons/fa";
 export const Login = () => {
   const [loginError, setLoginError] = useState();
   const [localname, setLocalname] = useState();
-  const [logging, setLogging] = useState("none");
+  const [logging, setLogging] = useState(false);
 
   const {
     register,
@@ -37,15 +37,18 @@ export const Login = () => {
     ) {
       setLoginError("");
       setTimeout(() => {
-        setLogging("flex");
+        setLogging(true);
       }, 100);
 
       setTimeout(() => {
-        setLogging("none");
+        setLogging(false);
+      }, 1000);
+
+      setTimeout(() => {
         navi("/");
-      }, 2000);
+      }, 1600);
     } else {
-      setLogging("none");
+      setLogging(false);
       setLoginError("아이디 또는 비밀번호가 잘못되었습니다.");
     }
   };

@@ -129,5 +129,9 @@ export const Alret = styled.div`
   font-size: 18px;
   margin: 50px auto;
   border-radius: 20px;
-  display: ${(props) => props.$logging};
+  display: flex;
+  opacity: ${(props) => (props.$logging ? 1 : 0)};
+  transform: ${(props) =>
+    props.$logging ? "translateY(0)" : "translateY(20px)"};
+  transition-duration: 0.3s;
 `;

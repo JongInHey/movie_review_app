@@ -16,7 +16,7 @@ import { RiUserSmileFill } from "react-icons/ri";
 import { useState } from "react";
 
 export const SignUp = () => {
-  const [logging, setLogging] = useState("none");
+  const [logging, setLogging] = useState(false);
 
   const {
     register,
@@ -29,13 +29,16 @@ export const SignUp = () => {
   const loginHandler = (data) => {
     localStorage.setItem("userData", JSON.stringify(data));
     setTimeout(() => {
-      setLogging("flex");
+      setLogging(true);
     }, 100);
 
     setTimeout(() => {
-      setLogging("none");
+      setLogging(false);
+    }, 1000);
+
+    setTimeout(() => {
       navi("/login");
-    }, 2000);
+    }, 1600);
   };
 
   return (
