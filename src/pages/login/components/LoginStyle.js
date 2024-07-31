@@ -117,3 +117,17 @@ export const TextWrap = styled.div`
     margin-top: 30px;
   }
 `;
+export const Alret = styled.div`
+  width: 300px;
+  height: 70px;
+  background: linear-gradient(135deg, ${colors.point}, ${colors.gradient});
+  position: relative;
+  z-index: 98;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  margin: 50px auto;
+  border-radius: 20px;
+  display: ${(props) => props.$logging};
+`;

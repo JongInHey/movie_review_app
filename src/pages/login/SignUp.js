@@ -8,12 +8,16 @@ import {
   Form,
   Button,
   TextWrap,
+  Alret,
 } from "./components/LoginStyle";
 import { FaLock, FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiUserSmileFill } from "react-icons/ri";
+import { useState } from "react";
 
 export const SignUp = () => {
+  const [logging, setLogging] = useState("none");
+
   const {
     register,
     handleSubmit,
@@ -24,9 +28,14 @@ export const SignUp = () => {
 
   const loginHandler = (data) => {
     localStorage.setItem("userData", JSON.stringify(data));
+    setTimeout(() => {
+      setLogging("flex");
+    }, 100);
 
-    alert("회원가입 되었습니다!");
-    navi("/login");
+    setTimeout(() => {
+      setLogging("none");
+      navi("/login");
+    }, 2000);
   };
 
   return (
@@ -100,6 +109,9 @@ export const SignUp = () => {
             이미 회원이 이신가요? <Link to={"/login"}>로그인 하러가기</Link>
           </p>
         </TextWrap>
+        <Alret $logging={logging}>
+          <p>회원가입 되었습니다!!</p>
+        </Alret>
       </Container>
     </>
   );

@@ -40,6 +40,18 @@ const Menu = styled.ul`
       color: ${colors.point};
     }
   }
+  .logging {
+    all: unset;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 100px;
+    cursor: pointer;
+    /* display: "none"; */
+
+    &:hover {
+      color: ${colors.point};
+    }
+  }
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -62,6 +74,7 @@ const More = styled.div`
 
 export const Header = () => {
   const [show, setShow] = useState(false);
+
   const moreHandler = () => {
     setShow(!show);
   };
@@ -82,6 +95,7 @@ export const Header = () => {
         <li>
           <Link to={routes.login}>Login</Link>
         </li>
+        <button className="logging">LogOut</button>
       </Menu>
 
       <More onClick={moreHandler}>

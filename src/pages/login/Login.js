@@ -8,12 +8,15 @@ import {
   Form,
   Button,
   TextWrap,
+  Alret,
 } from "./components/LoginStyle";
 import { useState } from "react";
 import { FaLock, FaUser } from "react-icons/fa";
 
 export const Login = () => {
   const [loginError, setLoginError] = useState();
+  const [localname, setLocalname] = useState();
+  const [logging, setLogging] = useState("none");
 
   const {
     register,
@@ -26,16 +29,23 @@ export const Login = () => {
   const loginHandler = (data) => {
     const { username, password } = data;
     const localData = JSON.parse(localStorage.getItem("userData"));
-
+    setLocalname(localData.username);
     if (
       localData &&
       localData.username === username &&
       localData.password === password
     ) {
       setLoginError("");
-      alert(`${localData.name} 님 환영 합니다! \n 로그인 되었습니다!!`);
-      navi("/");
+      setTimeout(() => {
+        setLogging("flex");
+      }, 100);
+
+      setTimeout(() => {
+        setLogging("none");
+        navi("/");
+      }, 2000);
     } else {
+      setLogging("none");
       setLoginError("아이디 또는 비밀번호가 잘못되었습니다.");
     }
   };
@@ -89,6 +99,10 @@ export const Login = () => {
             <Link to={"/signup"}>회원가입 하러 가기</Link>
           </p>
         </TextWrap>
+
+        <Alret $logging={logging}>
+          <p>{localname}님 환영 합니다! 로그인 되었습니다!!</p>
+        </Alret>
       </Container>
     </>
   );
