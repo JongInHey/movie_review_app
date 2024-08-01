@@ -46,6 +46,12 @@ const SSideMenu = styled.div`
         }
       }
     }
+
+    @media screen and (max-width: 768px) {
+      ul {
+        font-size: 18px;
+      }
+    }
   }
 `;
 

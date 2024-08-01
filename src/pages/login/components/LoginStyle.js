@@ -68,7 +68,7 @@ export const Form = styled.form`
 
   @media screen and (max-width: 768px) {
     h3 {
-      font-size: 30px;
+      font-size: 20px;
       margin-bottom: 20px;
     }
     input {
@@ -126,6 +126,7 @@ export const TextWrap = styled.div`
     margin-top: 30px;
   }
 `;
+
 export const Alret = styled.div`
   width: 300px;
   height: 70px;

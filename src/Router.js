@@ -41,13 +41,29 @@ export const Router = () => {
       <Routes>
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.detail} element={<Detail />} />
-        <Route path={routes.video} element={<Video />} />
-        <Route path={routes.search} element={<Search />} />
+        <Route path={routes.detail} element={<Video />} />
+        <Route path={routes.detail} element={<Search />} />
         <Route path={routes.login} element={<Login onLogin={handleLogin} />} />
         <Route path={routes.findusername} element={<FindUsername />} />
         <Route path={routes.findpassword} element={<FindPassword />} />
         <Route path={routes.signup} element={<SignUp />} />
         <Route path={"/*"} element={<PageNotFound />} />
+        {/* <Route
+          path={routes.home}
+          element={isLogged ? <Home /> : <Navigate to="/login" />}
+          /> */}
+        {/* <Route
+          path={routes.detail}
+          element={isLogged ? <Detail /> : <Navigate to="/login" />}
+        /> */}
+        {/* <Route
+          path={routes.video}
+          element={isLogged ? <Video /> : <Navigate to="/login" />}
+        /> */}
+        {/* <Route
+          path={routes.search}
+          element={isLogged ? <Search /> : <Navigate to="/login" />}
+        /> */}
       </Routes>
       <TopBtn />
       <Footer />

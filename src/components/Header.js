@@ -28,6 +28,10 @@ const Logo = styled.div`
   a {
     color: ${colors.point};
   }
+
+  @media screen and (max-width: 768px) {
+    font-size: 22px;
+  }
 `;
 
 const Menu = styled.ul`
@@ -57,6 +61,7 @@ const More = styled.div`
 
   @media screen and (max-width: 768px) {
     display: block;
+    font-size: 22px;
   }
 `;
 
@@ -69,7 +74,7 @@ export const Header = ({ isLogged, onLogout }) => {
 
   return (
     <Container>
-      <Logo onClick={moreHandler}>
+      <Logo>
         <Link to={routes.home}>JONGFILX</Link>
       </Logo>
 
