@@ -8,6 +8,7 @@ import { Similar } from "./components/Similar";
 import styled from "styled-components";
 import { colors } from "../../GlobalStyled";
 import { useScrollTop } from "../../lib/useScrollTop";
+import { PageNotFound } from "../PageNotFound";
 
 const Trailer = styled.button`
   all: unset;
@@ -84,15 +85,24 @@ export const Detail = () => {
       ) : (
         <>
           <PageTitle titleName={"Detail"} />
-          <ViewDetail detailData={detailData} />
-          {videoData.length === 0 ? (
-            ""
+          {detailData.success === false ? (
+            <PageNotFound />
           ) : (
-            <Trailer onClick={handleWatchTrailer}>예고편 보러가기</Trailer>
-          )}
+            <>
+              <ViewDetail detailData={detailData} />
+              {videoData.length === 0 ? (
+                ""
+              ) : (
+                <Trailer onClick={handleWatchTrailer}>예고편 보러가기</Trailer>
+              )}
 
-          <Similar title={"추천 영화"} simData={recommendData} />
-          <Similar title={"장르 & 키워드 유사한 영화"} simData={similarData} />
+              <Similar title={"추천 영화"} simData={recommendData} />
+              <Similar
+                title={"장르 & 키워드 유사한 영화"}
+                simData={similarData}
+              />
+            </>
+          )}
         </>
       )}
     </>
