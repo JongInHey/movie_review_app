@@ -43,7 +43,7 @@ export const FindPassword = () => {
 
   return (
     <>
-      <PageTitle titleName={"Login"} />
+      <PageTitle titleName={"FindPassword"} />
       <Container>
         <BackBg />
         <Form onSubmit={handleSubmit(loginHandler)}>

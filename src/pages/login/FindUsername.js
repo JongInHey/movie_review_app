@@ -43,7 +43,7 @@ export const FindUsername = () => {
 
   return (
     <>
-      <PageTitle titleName={"Login"} />
+      <PageTitle titleName={"FindID"} />
       <Container>
         <BackBg />
         <Form onSubmit={handleSubmit(loginHandler)}>

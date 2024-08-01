@@ -1,4 +1,3 @@
-// src/pages/Video.js
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Videos } from "../../api";
@@ -6,6 +5,7 @@ import { Loading } from "../../components/Loading";
 import styled from "styled-components";
 import { colors, spacing } from "../../GlobalStyled";
 import { useScrollTop } from "../../lib/useScrollTop";
+import { PageTitle } from "../../components/PageTitle";
 
 const Container = styled.section`
   padding: 100px ${spacing.side};
@@ -89,7 +89,7 @@ export const Video = () => {
     })();
   }, [movieId]);
 
-  console.log(videoData);
+  // console.log(videoData);
 
   return (
     <>
@@ -98,6 +98,7 @@ export const Video = () => {
       ) : (
         <>
           <Container>
+            <PageTitle titleName={"예고편"} />
             {videoData.map((video) => (
               <div key={video.id}>
                 <iframe
