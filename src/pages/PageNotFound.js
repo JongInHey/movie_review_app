@@ -39,6 +39,7 @@ const Container = styled.div`
     transition: all 0.3s ease;
     border-radius: 10px;
     transition: 0.3s ease;
+    margin-bottom: 10px;
 
     &:hover {
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
@@ -63,6 +64,7 @@ export const PageNotFound = () => {
         <p>NotFoundPage</p>
         <p>페이지를 찾을 수 없습니다.</p>
         <Link to="/">Home으로 돌아가기</Link>
+        <Link to="/search">검색창으로 돌아가기</Link>
       </Container>
     </>
   );
