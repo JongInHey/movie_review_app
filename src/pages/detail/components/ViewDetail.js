@@ -38,7 +38,7 @@ export const ViewDetail = ({ detailData }) => {
         )}
 
         <Desc>
-          <p>{detailData.overview}</p>
+          <p>{detailData.overview.slice(0, 470) + ".."}</p>
         </Desc>
       </ConWrap>
       <BgImg $bgimg={detailData.poster_path} />
