@@ -28,6 +28,7 @@ const SSideMenu = styled.div`
   top: 0;
   right: 0;
   display: none;
+  transition: 0.3s;
 
   @media screen and (max-width: 768px) {
     background-color: #252525;
@@ -75,7 +76,7 @@ export const SideMenu = ({ show, moreHandler, isLogged, onLogout }) => {
         </li>
         {isLogged ? (
           <li>
-            <Link to={routes.login} onClick={handleLogout}>
+            <Link to={routes.home} onClick={handleLogout}>
               LOGOUT
             </Link>
           </li>

@@ -87,7 +87,7 @@ export const Header = ({ isLogged, onLogout }) => {
         </li>
         {isLogged ? (
           <li>
-            <Link to={routes.login} onClick={onLogout}>
+            <Link to={routes.home} onClick={onLogout}>
               LOGOUT
             </Link>
           </li>
